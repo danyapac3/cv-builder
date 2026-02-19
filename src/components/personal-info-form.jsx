@@ -1,13 +1,6 @@
 import "../styles/personal-info-form.css";
 
-function InputGroup({ name, onChange = () => {}, label, type = "text" }) {
-  return (
-    <div className="input-group">
-      <label htmlFor={name}>{label} :</label>
-      <input onChange={onChange} type={type} id={name} name={name}></input>
-    </div>
-  );
-}
+import InputGroup from "./input-group";
 
 export default function PersonalInfoForm() {
   return (
