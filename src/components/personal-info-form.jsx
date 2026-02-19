@@ -5,6 +5,7 @@ import InputGroup from "./input-group";
 export default function PersonalInfoForm() {
   return (
     <form className="personal-info-form cv-form">
+      <h1 className="cv-form__title">Personal Information</h1>
       <InputGroup name="firstName" label="First Name" />
       <InputGroup name="lastName" label="Last Name" />
       <InputGroup name="email" type="email" label="Email" />
