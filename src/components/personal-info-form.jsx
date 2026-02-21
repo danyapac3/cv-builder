@@ -22,7 +22,7 @@ export default function PersonalInfoForm() {
   };
 
   return (
-    <form>
+    <form className="cv-form">
       <h1 className="cv-form__title">Personal Information</h1>
       <InputGroup
         name="firstName"
