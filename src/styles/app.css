@@ -1,0 +1,50 @@
+.app {
+  height: 100%;
+}
+
+.app__form-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.app__form-controls {
+  display: flex;
+}
+
+.app__preview-container {
+}
+
+.app__prev-form-button,
+.app__next-form-button {
+  border: 0;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: transform 0.2s;
+  transform: scale(1);
+}
+
+.app__prev-form-button:hover:not([disabled]),
+.app__next-form-button:hover:not([disabled]) {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.app__prev-form-button {
+  margin-left: auto;
+  border: solid 1px #8a8a8a;
+  background-color: white;
+  color: #666666;
+}
+
+.app__next-form-button {
+  margin-left: 10px;
+  background-color: #0000ff;
+  color: white;
+}
+
+.app__prev-form-button[disabled],
+.app__next-form-button[disabled] {
+  opacity: 0.3;
+}
