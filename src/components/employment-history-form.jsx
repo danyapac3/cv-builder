@@ -1,9 +1,10 @@
+import "../styles/input-group.css";
 import InputGroup from "./input-group";
 
 function EmploymentHistoryForm() {
   return (
     <form className="cv-form">
-      <h1 className="cv-form__title">Personal Information</h1>
+      <h1 className="cv-form__title">Employment History</h1>
       <InputGroup
         name="jobTitle"
         label="Job Title"

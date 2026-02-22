@@ -1,0 +1,19 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+  align-items: stretch;
+}
+
+.input-group > label {
+  font-size: 18px;
+}
+
+.input-group > input {
+  font-size: 18px;
+  background-color: #f3f1fa;
+  border: 0px;
+  padding: 8px;
+  border-radius: 6px;
+}

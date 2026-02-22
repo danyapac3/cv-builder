@@ -9,7 +9,7 @@ function InputGroup({
 }) {
   return (
     <div className="input-group">
-      <label htmlFor={name}>{label} :</label>
+      <label htmlFor={name}>{label}</label>
       <input
         onChange={(e) => handleChange(name, e.target.value)}
         type={type}

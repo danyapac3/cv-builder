@@ -1,7 +1,10 @@
 .cv-form {
-  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .cv-form__title {
   font-size: 24px;
+  grid-column: 1 / -1;
 }

@@ -1,7 +1,7 @@
-import "../styles/personal-info-form.css";
-
 import InputGroup from "./input-group";
 import { useState } from "react";
+
+import "../styles/cv-form.css";
 
 const initialData = {
   firstName: "",
