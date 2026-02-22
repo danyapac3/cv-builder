@@ -2,6 +2,7 @@ import "./styles/app.css";
 
 import PersonalInfoForm from "./components/personal-info-form";
 import EmploymentHistoryForm from "./components/employment-history-form";
+import ProgressTracker from "./components/progress-tracker";
 
 import { useState } from "react";
 
@@ -24,6 +25,10 @@ function App() {
       <div className="app__form-container">
         <CurrentForm />
         <div className="app__form-controls">
+          <ProgressTracker
+            numberOfPages={formComponents.length}
+            currentPage={formIndex}
+          />
           <button
             className="app__prev-form-button"
             disabled={formIndex <= 0}
