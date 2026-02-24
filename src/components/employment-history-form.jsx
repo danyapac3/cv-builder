@@ -2,6 +2,7 @@ import "../styles/input-group.css";
 import InputGroup from "./input-group";
 import { useState } from "react";
 import Disclosure from "./disclosure";
+import AddButton from "./add-button";
 
 const createJob = (() => {
   let count = 0;
@@ -30,12 +31,16 @@ function EmploymentHistoryForm() {
     );
   };
 
+  const handleAddNewJob = () => {
+    setJobs([...jobs, createJob()]);
+  };
+
   return (
     <form className="cv-form">
       <h1 className="cv-form__title">Employment History</h1>
       {jobs.map((job) => {
         return (
-          <Disclosure title="Front End Developer">
+          <Disclosure key={job.id} title="Front End Developer">
             <div className="cv-form__content-grid">
               <InputGroup
                 name="jobTitle"
@@ -67,6 +72,7 @@ function EmploymentHistoryForm() {
           </Disclosure>
         );
       })}
+      <AddButton onClick={handleAddNewJob}>Add new employment</AddButton>
     </form>
   );
 }

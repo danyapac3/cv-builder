@@ -1,0 +1,19 @@
+.add-button {
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 6px;
+}
+
+.add-button:hover {
+  background-color: #e8e8e8;
+}
+
+.add-button__plus-icon {
+  width: 18px;
+  height: 18px;
+}
