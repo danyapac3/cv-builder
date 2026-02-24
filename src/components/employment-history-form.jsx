@@ -35,12 +35,20 @@ function EmploymentHistoryForm() {
     setJobs([...jobs, createJob()]);
   };
 
+  const handleRemoveJob = (id) => {
+    setJobs(jobs.filter((job) => job.id !== id));
+  };
+
   return (
     <form className="cv-form">
       <h1 className="cv-form__title">Employment History</h1>
       {jobs.map((job) => {
         return (
-          <Disclosure key={job.id} title="Front End Developer">
+          <Disclosure
+            key={job.id}
+            title="Front End Developer"
+            onRemove={() => handleRemoveJob(job.id)}
+          >
             <div className="cv-form__content-grid">
               <InputGroup
                 name="jobTitle"
