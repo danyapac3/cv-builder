@@ -11,6 +11,7 @@
 }
 
 .input-group > input {
+  width: 100%;
   font-size: 18px;
   background-color: #f3f1fa;
   border: 0px;

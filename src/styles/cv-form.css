@@ -1,11 +1,16 @@
 .cv-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
 .cv-form__title {
   font-size: 24px;
-  grid-column: 1 / -1;
   font-weight: 500;
+}
+
+.cv-form__content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
