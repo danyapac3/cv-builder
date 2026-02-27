@@ -8,22 +8,64 @@ import { useState } from "react";
 
 const formComponents = [PersonalInfoForm, EmploymentHistoryForm];
 
+const initPersonalData = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phoneNumber: "",
+  jobTarget: "",
+  dateOfBirth: "",
+  country: "",
+  city: "",
+};
+
+const initEmploymentHistory = [
+  {
+    id: 0,
+    jobTitle: "",
+    employer: "",
+    startDate: "",
+    endDate: "",
+  },
+];
+
 function App() {
   const [formIndex, setFormIndex] = useState(0);
+  const [personalData, setPersonalData] = useState(initPersonalData);
+  const [employmentHistory, setEmploymentHistory] = useState(
+    initEmploymentHistory,
+  );
+
+  const forms = [
+    {
+      component: PersonalInfoForm,
+      data: personalData,
+      updater: setPersonalData,
+    },
+    {
+      component: EmploymentHistoryForm,
+      data: employmentHistory,
+      updater: setEmploymentHistory,
+    },
+  ];
 
   const handlePrevForm = () => setFormIndex(formIndex - 1);
   const handleNextForm = () => setFormIndex(formIndex + 1);
 
-  if (formComponents.length === 0) {
+  if (forms.length === 0) {
     return <div className="form-container"></div>;
   }
 
-  const CurrentForm = formComponents[formIndex];
+  const currentForm = forms[formIndex];
+  const CurrentFormComponent = currentForm.component;
 
   return (
     <div className="app">
       <div className="app__form-container">
-        <CurrentForm />
+        <CurrentFormComponent
+          data={currentForm.data}
+          updater={currentForm.updater}
+        />
         <div className="app__form-controls">
           <ProgressTracker
             numberOfPages={formComponents.length}

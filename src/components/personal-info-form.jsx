@@ -1,24 +1,10 @@
 import InputGroup from "./input-group";
-import { useState } from "react";
 
 import "../styles/cv-form.css";
 
-const initialData = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  phoneNumber: "",
-  jobTarget: "",
-  dateOfBirth: "",
-  country: "",
-  city: "",
-};
-
-export default function PersonalInfoForm() {
-  const [formData, setData] = useState(initialData);
-
+export default function PersonalInfoForm({ data: formData, updater }) {
   const handleChange = (name, value) => {
-    setData((prevData) => ({ ...prevData, [name]: value }));
+    updater((prevData) => ({ ...prevData, [name]: value }));
   };
 
   return (

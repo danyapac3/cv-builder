@@ -1,6 +1,5 @@
 import "../styles/input-group.css";
 import InputGroup from "./input-group";
-import { useState } from "react";
 import Disclosure from "./disclosure";
 import AddButton from "./add-button";
 
@@ -16,9 +15,7 @@ const createJob = (() => {
   });
 })();
 
-function EmploymentHistoryForm() {
-  const [jobs, setJobs] = useState([createJob(), createJob(), createJob()]);
-
+function EmploymentHistoryForm({ data: jobs, updater: setJobs }) {
   const updateJob = (id, propertyName, value) => {
     setJobs(
       jobs.map((job) => {
