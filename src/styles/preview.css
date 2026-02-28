@@ -20,6 +20,11 @@
 }
 
 .preview__location {
+  float: left;
+}
+
+.preview__date-of-birth {
+  text-align: end;
 }
 
 .preview__contacts {

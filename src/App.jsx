@@ -31,7 +31,7 @@ const initEmploymentHistory = [
 function App() {
   const [formIndex, setFormIndex] = useState(0);
   const [personalData, setPersonalData] = useState(initPersonalData);
-  const [employmentHistory, setEmploymentHistory] = useState(
+  const [employmentHistoryData, setEmploymentHistoryData] = useState(
     initEmploymentHistory,
   );
 
@@ -43,10 +43,15 @@ function App() {
     },
     {
       component: EmploymentHistoryForm,
-      data: employmentHistory,
-      updater: setEmploymentHistory,
+      data: employmentHistoryData,
+      updater: setEmploymentHistoryData,
     },
   ];
+
+  const data = {
+    personal: personalData,
+    employment: employmentHistoryData,
+  };
 
   const handlePrevForm = () => setFormIndex(formIndex - 1);
   const handleNextForm = () => setFormIndex(formIndex + 1);
@@ -83,7 +88,7 @@ function App() {
         </div>
       </div>
       <div className="app__preview-container">
-        <Preview data={personalData} />
+        <Preview data={data} />
       </div>
     </div>
   );
