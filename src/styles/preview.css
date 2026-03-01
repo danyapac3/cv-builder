@@ -1,39 +1,25 @@
 .preview {
+}
+
+.preview-section {
   line-height: 1.5;
+  font-size: 18px;
 }
 
-.preview__personal-info {
+.preview-section:not(:last-child) {
+  margin-bottom: 20px;
 }
 
-.preview__fullname {
-  font-weight: bold;
-  font-size: 26px;
+.preview-section__heading {
+  font-size: 30px;
 }
 
-.preview__fullname:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-.preview__job-target {
+.preview-section__bold-text {
   font-size: 20px;
   font-weight: 500;
 }
 
-.preview__location {
-  float: left;
-}
-
-.preview__date-of-birth {
-  text-align: end;
-}
-
-.preview__contacts {
+.preview-section__row {
   display: flex;
   justify-content: space-between;
-}
-
-.preview__phone-number {
-}
-
-.preview__email {
 }

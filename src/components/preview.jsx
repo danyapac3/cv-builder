@@ -17,31 +17,33 @@ function PersonalDataSection({ personalData }) {
   const [yearOfBirth, monthOfBirth, dayOfBirth] = dateOfBirth.split("-");
 
   return (
-    <div>
-      <div className="preview__section">
-        {!!fullname && <h2 className="preview__section-header">{fullname}</h2>}
-        {!!jobTarget && <div className="preview__job-target">{jobTarget}</div>}
-        {!!location && <div className="preview__location">{location}</div>}
+    <section className="preview-section">
+      {!!fullname && <h2 className="preview-section__heading">{fullname}</h2>}
+      {!!jobTarget && (
+        <div className="preview-section__bold-text">{jobTarget}</div>
+      )}
+
+      <div className="preview-section__row">
+        {!!location && <div>{location}</div>}
         {!!dateOfBirth && (
-          <div className="preview__date-of-birth">
+          <div>
             {dayOfBirth}/{monthOfBirth}/{yearOfBirth}
           </div>
         )}
       </div>
-      <div className="preview__contacts">
-        {!!phoneNumber && (
-          <div className="preview__phone-number">{phoneNumber}</div>
-        )}
-        {!!email && <div className="preview__email">{email}</div>}
+
+      <div className="preview-section__row">
+        {!!phoneNumber && <div>{phoneNumber}</div>}
+        {!!email && <div>{email}</div>}
       </div>
-    </div>
+    </section>
   );
 }
 
 function EmploymentHistorySection({ jobs }) {
   return (
     <section className="preview__section">
-      <h2 className="preview__section-header">Employment History</h2>
+      <h2 className="preview__section-heading">Employment History</h2>
     </section>
   );
 }
