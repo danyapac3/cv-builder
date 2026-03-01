@@ -1,6 +1,6 @@
 import "../styles/preview.css";
 
-function Preview({ data }) {
+function PersonalDataSection({ personalData }) {
   const {
     firstName,
     lastName,
@@ -10,16 +10,16 @@ function Preview({ data }) {
     email,
     jobTarget,
     dateOfBirth,
-  } = data.personal;
+  } = personalData;
 
   const fullname = (firstName + " " + lastName).trim();
   const location = [city, country].filter((str) => !!str).join(", ");
   const [yearOfBirth, monthOfBirth, dayOfBirth] = dateOfBirth.split("-");
 
   return (
-    <div className="preview">
-      <div className="preview__personal-info">
-        {!!fullname && <h1 className="preview__fullname">{fullname}</h1>}
+    <div>
+      <div className="preview__section">
+        {!!fullname && <h2 className="preview__section-header">{fullname}</h2>}
         {!!jobTarget && <div className="preview__job-target">{jobTarget}</div>}
         {!!location && <div className="preview__location">{location}</div>}
         {!!dateOfBirth && (
@@ -34,11 +34,25 @@ function Preview({ data }) {
         )}
         {!!email && <div className="preview__email">{email}</div>}
       </div>
-      <div className="preview__employment-history">
-        {data.employment.map((job) => {
-          <div className="preview__job"></div>;
-        })}
-      </div>
+    </div>
+  );
+}
+
+function EmploymentHistorySection({ jobs }) {
+  return (
+    <section className="preview__section">
+      <h2 className="preview__section-header">Employment History</h2>
+    </section>
+  );
+}
+
+function Preview({ data }) {
+  return (
+    <div className="preview">
+      <PersonalDataSection personalData={data.personal} />
+      {data.employment.length > 0 && (
+        <EmploymentHistorySection jobs={data.employment} />
+      )}
     </div>
   );
 }
