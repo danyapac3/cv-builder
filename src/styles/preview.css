@@ -1,4 +1,7 @@
 .preview {
+  padding: 20px;
+  overflow-y: scroll;
+  height: 100%;
 }
 
 .preview-section {
