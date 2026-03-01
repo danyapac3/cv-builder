@@ -42,8 +42,32 @@ function PersonalDataSection({ personalData }) {
 
 function EmploymentHistorySection({ jobs }) {
   return (
-    <section className="preview__section">
+    <section className="preview-section">
       <h2 className="preview__section-heading">Employment History</h2>
+      {jobs.map((job, index) => {
+        const { startDate, endDate, jobTitle, employer } = job;
+        const [startYear, startMonth, startDay] = startDate.split("-");
+        const [endYear, endMonth, endDay] = endDate.split("-");
+
+        if (!jobTitle.trim()) {
+          return null;
+        }
+
+        return (
+          <div key={index} className="preview-section__row">
+            <div>
+              {jobTitle}
+              {!!employer && " at " + employer}
+            </div>
+            <div>
+              {!!startDate &&
+                "from " + [startDay, startMonth, startYear].join("/")}
+              {!!startDate && !!endDate && " "}
+              {!!endDate && "until " + [endDay, endMonth, endYear].join("/")}
+            </div>
+          </div>
+        );
+      })}
     </section>
   );
 }
