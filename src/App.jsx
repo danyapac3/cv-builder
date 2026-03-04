@@ -1,9 +1,15 @@
 import "./styles/app.css";
 
-import PersonalInfoForm from "./components/personal-info-form";
-import EmploymentHistoryForm from "./components/employment-history-form";
 import ProgressTracker from "./components/progress-tracker";
 import Preview from "./components/preview";
+
+// forms
+import PersonalInfoForm from "./components/forms/personal-info";
+import EmploymentHistoryForm from "./components/forms/employment-history";
+import EducationsForm from "./components/forms/educations";
+import SkillsForm from "./components/forms/skills";
+import LanguagesForm from "./components/forms/languages";
+import ProfileSummaryForm from "./components/forms/profile-summary";
 
 import { useState } from "react";
 
@@ -29,12 +35,44 @@ const initEmploymentHistory = [
   },
 ];
 
+const initEducations = [
+  {
+    id: 0,
+    schoolName: "",
+    degree: "",
+    startDate: null,
+    endDate: null,
+  },
+];
+
+const initSkills = [
+  {
+    id: 0,
+    skill: "",
+    proficiency: 5,
+  },
+];
+
+const initLanguages = [
+  {
+    id: 0,
+    language: "",
+    proficiency: 6,
+  },
+];
+
+const initProfileSummary = "";
+
 function App() {
   const [formIndex, setFormIndex] = useState(0);
   const [personalData, setPersonalData] = useState(initPersonalData);
   const [employmentHistoryData, setEmploymentHistoryData] = useState(
     initEmploymentHistory,
   );
+  const [educations, setEducations] = useState(initEducations);
+  const [skills, setSkills] = useState(initSkills);
+  const [languages, setLanguages] = useState(initLanguages);
+  const [profileSummary, setProfileSummary] = useState(initProfileSummary);
 
   const forms = [
     {
@@ -46,6 +84,26 @@ function App() {
       component: EmploymentHistoryForm,
       data: employmentHistoryData,
       updater: setEmploymentHistoryData,
+    },
+    {
+      component: EducationsForm,
+      data: educations,
+      updater: setEducations,
+    },
+    {
+      component: SkillsForm,
+      data: skills,
+      updater: setSkills,
+    },
+    {
+      component: LanguagesForm,
+      data: languages,
+      updater: setLanguages,
+    },
+    {
+      component: ProfileSummaryForm,
+      data: profileSummary,
+      updater: setProfileSummary,
     },
   ];
 
