@@ -7,11 +7,12 @@ const createJob = (() => {
   let count = 0;
 
   return () => ({
-    id: String(count++),
+    id: String(++count),
     jobTitle: "",
     employer: "",
     startDate: "",
     endDate: "",
+    description: "",
   });
 })();
 
@@ -71,6 +72,13 @@ function EmploymentHistoryForm({ data: jobs, updater: setJobs }) {
                 label="End Date"
                 value={job.endDate}
                 type="date"
+                handleChange={(name, value) => updateJob(job.id, name, value)}
+              />
+              <InputGroup
+                name="description"
+                label="Description"
+                value={job.description}
+                type="textarea"
                 handleChange={(name, value) => updateJob(job.id, name, value)}
               />
             </div>

@@ -25,6 +25,7 @@ const initEmploymentHistory = [
     employer: "",
     startDate: "",
     endDate: "",
+    description: "",
   },
 ];
 

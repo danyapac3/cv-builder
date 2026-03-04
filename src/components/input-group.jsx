@@ -7,6 +7,20 @@ function InputGroup({
   label,
   type = "text",
 }) {
+  if (type === "textarea") {
+    return (
+      <div className="input-group">
+        <label htmlFor={name}>{label}</label>
+        <textarea
+          onChange={(e) => handleChange(name, e.target.value)}
+          id={name}
+          rows="3"
+          value={value}
+        ></textarea>
+      </div>
+    );
+  }
+
   return (
     <div className="input-group">
       <label htmlFor={name}>{label}</label>
@@ -14,7 +28,6 @@ function InputGroup({
         onChange={(e) => handleChange(name, e.target.value)}
         type={type}
         id={name}
-        name={name}
         value={value}
       />
     </div>

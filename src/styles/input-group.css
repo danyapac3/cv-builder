@@ -18,3 +18,15 @@
   padding: 8px;
   border-radius: 6px;
 }
+
+.input-group > textarea {
+  display: block;
+  font-family: inherit;
+  width: 100%;
+  resize: none;
+  background-color: #f3f1fa;
+  font-size: 18px;
+  border: 0px;
+  padding: 8px;
+  border-radius: 6px;
+}
